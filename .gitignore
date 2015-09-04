@@ -41,3 +41,35 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+
+
+#=====================================================
+# Ignore all OpenDS files except for the voicehud ones
+#=====================================================
+
+# Ignore everything
+*
+
+# But not these files...
+
+!.gitignore
+!.gitattributes
+
+!PanelCenter.java
+
+!HUDGUIController.java
+!src/eu/opends/niftyGui/HUDGUIController.java
+!src/eu.opends.niftyGui/HUDGUIController.java
+
+!HUDGUI.java
+!src/eu/opends/niftyGui/HUDGUI.java
+!src/eu.opends.niftyGui/HUDGUI.java
+
+!HUDGUI.xml
+!assets/Interface/HUDGUI.xml
+
+# ...even if they are in subdirectories
+!*/
+
+
+

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nifty xmlns="http://nifty-gui.sourceforge.net/nifty-1.3.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://nifty-gui.sourceforge.net/nifty-1.3.xsd http://nifty-gui.sourceforge.net/nifty-1.3.xsd">
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<!-- load default styles and controls -->
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<useStyles filename="nifty-default-styles.xml" />
+	<useControls filename="nifty-default-controls.xml" />
+	<style id="console-red" base="button-font">
+		<attributes font="fonts/menu.fnt" color="#f00f" />
+	</style>
+	<style id="console-white" base="button-font">
+		<attributes font="fonts/menu.fnt" color="#ffff" />
+	</style>
+	<style id="console-font">
+		<attributes font="fonts/verdana-48-regular.fnt" color="#00ff" />
+	</style>
+
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+	<!-- start screen -->
+	<!-- +++++++++++++++++++++++++++++++++++++++ -->
+
+	<screen id="start"
+		controller="eu.opends.niftyGui.InstructionScreenGUIController">
+		
+		<layer id="instructionScreen_1" childLayout="vertical" backgroundColor="#0008" visible="true">
+			
+         	<panel childLayout="vertical" align="center" width="100%">
+        
+               	<panel childLayout="center" align="center" width="100%" height="60px" />
+	
+				<panel childLayout="center" align="center" width="100%" height="30px" backgroundColor="#0f08">
+        	   		<control name="label" text="Welcome to this driving simulator experiment." color="#0f08"
+						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
+					</control>
+        		</panel>
+				
+			</panel>
+
+	    </layer>
+
+
+		<layer id="instructionScreen_1_2" childLayout="vertical" backgroundColor="#0008" visible="false">
+	    </layer>
+		
+	</screen>
+
+</nifty>
