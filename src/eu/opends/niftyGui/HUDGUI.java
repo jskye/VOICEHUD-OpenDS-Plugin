@@ -10,6 +10,7 @@ import com.jme3.input.InputManager;
 import com.jme3.niftygui.NiftyJmeDisplay;
 import com.jme3.renderer.ViewPort;
 import com.jme3.scene.Spatial.CullHint;
+import com.jme3.texture.Image;
 
 import de.lessvoid.nifty.Nifty;
 import de.lessvoid.nifty.controls.Button;
@@ -110,6 +111,15 @@ public class HUDGUI {
     	// disable fly camera, since mouse pointer is needed for user input
     	flyCam.setEnabled(false);
 	}
+	
+	
+//	private void testTransparentImage(){
+//		Image transPNG=Image.createImage("Textures/hud/grid.png");  //load the tranparent image or opaque image
+//		int rgbData[];
+//		transPNG.getRGB(rgbData, 0,transPNG.getWidth(), 0, 0,transPNG.getWidth(), transPNG.getHeight());
+//		Image tranparentImage==Image.createRGBImage(rgbData, width, height, true); //process alpha (true) for opaque false
+//		transPNG=null;
+//	}
 
 	
 	
