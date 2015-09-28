@@ -25,12 +25,17 @@ import java.util.Map.Entry;
 import com.jme3.font.BitmapFont;
 import com.jme3.font.BitmapText;
 import com.jme3.font.Rectangle;
+import com.jme3.material.Material;
+import com.jme3.material.RenderState.BlendMode;
 import com.jme3.font.BitmapFont.Align;
 import com.jme3.math.ColorRGBA;
 import com.jme3.math.FastMath;
 import com.jme3.math.Quaternion;
+import com.jme3.renderer.queue.RenderQueue.Bucket;
+import com.jme3.scene.Geometry;
 import com.jme3.scene.Node;
 import com.jme3.scene.Spatial.CullHint;
+import com.jme3.scene.shape.Box;
 import com.jme3.ui.Picture;
 
 import eu.opends.basics.SimulationBasics;
@@ -40,6 +45,7 @@ import eu.opends.drivingTask.settings.SettingsLoader.Setting;
 import eu.opends.main.DriveAnalyzer;
 import eu.opends.main.Simulator;
 import eu.opends.niftyGui.MessageBoxGUI;
+import eu.opends.niftyGui.HUDGUI;
 import eu.opends.niftyGui.KeyMappingGUI.GuiLayer;
 
 /**
@@ -73,6 +79,10 @@ public class PanelCenter
 	
 	// message box
 	private static MessageBoxGUI messageBoxGUI;
+	
+	private static HUDGUI hudGUI;
+
+	
 	private static boolean resolutionHasChanged = false;
 	private static int updateDelayCounter = 0;
 	
@@ -97,6 +107,11 @@ public class PanelCenter
 		return messageBoxGUI;
 	}
 	
+//	public static HUDGUI getHUD()
+//	{
+//		return hudGUI;
+//	}
+	
 	
 	public static void resetMessageBox()
 	{
@@ -115,6 +130,7 @@ public class PanelCenter
 	{
 		sim = analyzer;
 		messageBoxGUI = new MessageBoxGUI(sim);
+//		hudGUI = new HUDGUI(sim);
 	}
 	
 	
@@ -131,9 +147,8 @@ public class PanelCenter
 	{
 		sim = simulator;
 		messageBoxGUI = new MessageBoxGUI(sim);
-		
-		
-//		hudGUI = new HUDGUI(sim);
+	
+		hudGUI = new HUDGUI(sim);
 
 		settingsLoader = Simulator.getSettingsLoader();
 		
@@ -503,7 +518,7 @@ public class PanelCenter
         
 //        Box b = new Box(boxWidth, boxHeight, 0);
 //        Geometry geom = new Geometry("Box", b);
-        
+//        
 //        Material mat = new Material(sim.getAssetManager(), "Common/MatDefs/Misc/Unshaded.j3md");
 //        mat.setTexture("ColorMap", 
 //                sim.getAssetManager().loadTexture("Textures/OculusRift/transparency.png"));
@@ -511,9 +526,9 @@ public class PanelCenter
 //        geom.setQueueBucket(Bucket.Transparent);
 //        mat.setColor("Color", ColorRGBA.Gray);
 //        geom.setMaterial(mat);
-        
+//        
 //        geom.setLocalTranslation(startX + boxWidth - paddingX, startY - boxHeight + paddingY, 0);
-        
+//        
         // test
 
         
