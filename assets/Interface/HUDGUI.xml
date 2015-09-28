@@ -31,7 +31,7 @@
                	<panel childLayout="center" align="center" width="100%" height="60px" />
 	
 				<panel childLayout="center" align="center" width="100%" height="30px" backgroundColor="#0f08">
-        	   		<control name="label" text="Welcome to this driving simulator experiment." color="#0f08"
+        	   		<control name="label" text="Welcome to this hud simulator experiment." color="#0f08"
 						align="center" valign="center" height="50px" font="Interface/Fonts/Arial32px.fnt">
 					</control>
         		</panel>

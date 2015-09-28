@@ -52,12 +52,15 @@ public class PanelCenter
 
 	private static Picture speedometer, RPMgauge, logo, hood, warningFrame, leftTurnSignal, 
 							leftTurnSignalOff, rightTurnSignal, rightTurnSignalOff,
-							handBrakeIndicator, handBrakeIndicatorOff, hudoverlay;
+							handBrakeIndicator, handBrakeIndicatorOff, hudoverlayBackground;
 	private static Node RPMIndicator, speedIndicator, cruiseControlIndicator;
 	private static BitmapText reverseText, neutralText, manualText, driveText, currentGearText, odometerText;	
+	private static BitmapText hudHeadingText;	
 	private static BitmapText speedText, mileageText, markerText, storeText, deviationText, engineSpeedText, gearText;
 	private static BitmapText fuelConsumptionPer100KmText, fuelConsumptionPerHourText, totalFuelConsumptionText;
 	private static Node analogIndicators = new Node("AnalogIndicators");
+	private static Node hudOverlay = new Node("hudOverlay");
+
 	private static boolean showWarningFrame = false;
 	private static int flashingInterval = 500;
 	
@@ -130,6 +133,7 @@ public class PanelCenter
 		messageBoxGUI = new MessageBoxGUI(sim);
 		
 		
+//		hudGUI = new HUDGUI(sim);
 
 		settingsLoader = Simulator.getSettingsLoader();
 		
@@ -138,7 +142,6 @@ public class PanelCenter
 		boolean showAnalog;
 		if(showAnalogString.isEmpty())
 			showAnalog = true;
-		else
 			showAnalog = showAnalogString.equalsIgnoreCase("true");
 		
 		boolean showDigital = settingsLoader.getSetting(Setting.General_showDigitalIndicators, false);
@@ -207,13 +210,21 @@ public class PanelCenter
         analogIndicators.attachChild(speedometer);
         
         // set the hud
-//        hudoverlay = new Picture("hudoverlay");
-//        hudoverlay.setImage(sim.getAssetManager(), "Textures/hud/grid.png", true);
-//        hudoverlay.setWidth(300);
-//        hudoverlay.setHeight(300);
-//        hudoverlay.setPosition(-50, -50);
-//        analogIndicators.attachChild(hudoverlay);
-//        
+//        hudoverlayBackground = new Picture("hudoverlayBackground");
+//        hudoverlayBackground.setImage(sim.getAssetManager(), "Textures/hud/grid.png", true);
+//        hudoverlayBackground.setWidth(800);
+//        hudoverlayBackground.setHeight(500);
+//        hudoverlayBackground.setPosition(-50, -50);
+//        hudHeadingText = new BitmapText(guiFont, false);
+//        hudHeadingText.setName("HUD");
+//        hudHeadingText.setText("HUD");
+//        hudHeadingText.setSize(guiFont.getCharSet().getRenderedSize());
+//        hudHeadingText.setColor(ColorRGBA.Black);
+//        hudHeadingText.setLocalTranslation(70, 65, 0);
+//        hudOverlay.attachChild(hudoverlayBackground);
+//        hudOverlay.attachChild(hudHeadingText);
+//        guiNode.attachChild(hudOverlay);
+        
         handBrakeIndicator = new Picture("handBrakeIndicator");
         handBrakeIndicator.setImage(sim.getAssetManager(), "Textures/Gauges/handBrakeIndicatorSmall.png", true);
         handBrakeIndicator.setWidth(28);
